@@ -1,0 +1,61 @@
+<body>
+    <div class="form-body">
+        <form [formGroup]="form" (submit)="aceptar()">
+           
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="nombre">
+            </mat-form-field>
+            <br>
+
+            <mat-form-field>
+                <mat-label>Medio Comunicacion</mat-label>
+                <mat-select formControlName="medioComunicacion" >
+                    <mat-option value="email">email</mat-option>
+                    <mat-option value="redes sociales">redes sociales</mat-option>
+                    <mat-option value="pagina web">pagina web</mat-option>
+                </mat-select>
+              </mat-form-field>
+    
+            <br>
+
+            <mat-form-field>
+                <mat-label>FechaFin</mat-label>
+                <input matInput [matDatepicker]="pickerFin" formControlName="fechaFin" max="maxDate">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerFin"></mat-datepicker-toggle>
+                <mat-datepicker #pickerFin></mat-datepicker>
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field>
+                <mat-label>FechaInicio</mat-label>
+                <input matInput [matDatepicker]="pickerInicio" formControlName="fechaInicio" max="maxDate">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+                <mat-datepicker #pickerInicio></mat-datepicker>
+            </mat-form-field>
+            <br>
+            
+            <mat-form-field>
+                <mat-label>Presupuesto</mat-label>
+                <input type="number" matInput formControlName="presupuesto">
+            </mat-form-field>
+        
+            <br>
+            <mat-form-field>
+                <mat-label>Objetivo</mat-label>
+                <input matInput formControlName="objetivo">
+            </mat-form-field>
+            <br>
+            
+            <div class="button-sub-form">
+                <button mat-raised-button type="submit" color="warn">Aceptar</button>
+                <!-- <button mat-raised-button color="warn" routerLink="/Vega/listado">Cancelar</button> -->
+            </div>
+        
+            <p>{{mensaje}}</p>
+        </form>
+    </div>
+</body>

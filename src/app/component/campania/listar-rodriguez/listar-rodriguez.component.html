@@ -1,0 +1,51 @@
+
+
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="idCampania">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.idCampania }} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef mat-sort-header > Plate </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="objetivo">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Brand </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.objetivo}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="fechaInicio">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Dia de fabricacion </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.fechaInicio| date : "dd/MM/yyyy"}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="fechaFin">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Dia de fin </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.fechaFin| date : "dd/MM/yyyy"}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="presupuesto">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Presupuesto </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.presupuesto}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="medioComunicacion">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> MedioComunicacion </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.medioComunicacion}} </mat-cell>
+      </ng-container>
+        
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+    #paginator
+    [pageSize]="4"
+    [pageSizeOptions]="[4, 7, 10]"
+    [showFirstLastButtons]="true"
+    >
+    </mat-paginator>
+  </div>
